@@ -1,3 +1,2 @@
-###  0x00. Shell, basics
+# This repo will focus on some basic shell projects for now
 
-###### In this project I will run through some basic shell excercises
