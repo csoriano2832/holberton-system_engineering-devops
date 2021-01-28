@@ -1,2 +1,1 @@
-### I will running some basic shell exercises in this project
-
+### I will be running some basic shell exercises in this project
