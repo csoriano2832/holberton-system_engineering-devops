@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script displays a shortened version of the contents in "/etc/passwd"
+
+file="/etc/passwd"
+
+while IFS= read -r line
+do
+	echo "$line" | cut --delimiter=":" --fields=1,3,6
+done < $file
