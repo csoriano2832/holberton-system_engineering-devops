@@ -9,9 +9,8 @@ sudo apt-get install nginx -y
 echo 'Holberton School' | sudo tee /var/www/html/index.html
 
 # Replace string with new string in nginx conf file
-new_string="\\\n\tserver {\n\t\tserver_name 35.231.117.82;\n\t\trewrite ^/redirect_me/$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n\t}"
-
-sudo sed -i "25i$new_string" /etc/nginx/nginx.conf
+new_string="\\\n\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+sudo sed -i "48i $new_string" /etc/nginx/sites-available/default
 
 # Restart nginx service
 sudo service nginx restart
