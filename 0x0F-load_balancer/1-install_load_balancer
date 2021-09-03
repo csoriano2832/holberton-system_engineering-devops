@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This script installs and configures HAproxy on your server
+
+sudo apt-get update
+sudo apt-get install haproxy -y
+
+string="\\\n# Enable HAproxy to be started by the init script\nENABLED=1\n"
+sed -i "8i $string" /etc/default/haproxy
+
+front="\\\nfrontend haproxynode\n\tbind\t*:80\nmode\thttp\ndefault_backend\tbackendnodes\n\n"
+
+back="backend backendnodes\n\tbalance\troundrobin\nserver\t2832-web-01 35.231.117.82:80 check\n\tserver\t2832-web-02 35.229.57.82 check"
+
+sed -i "35i $front $back" /etc/haproxy/haproxy.cfg
+
+sudo service haproxy restart
