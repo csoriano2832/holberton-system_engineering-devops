@@ -28,9 +28,8 @@ if __name__ == "__main__":
                      format(ID))
 
     for i in r.json():
-        task['task'] = i.get('title')
-        task['completed'] = i.get('completed')
-        task['username'] = username
+        task = {"task": i.get("title"), "completed": i.get("completed"),
+                "username": username}
         tasks.append(task)
 
     employee_todos[ID] = tasks
