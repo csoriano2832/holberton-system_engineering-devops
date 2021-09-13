@@ -10,10 +10,7 @@ import requests
 if __name__ == "__main__":
     """ Only executes as main """
 
-    user_id = 0
-    username = ""
-    title = ""
-    status = ""
+    url = 'https://jsonplaceholder.typicode.com/todos?userId='
     employee_todos = {}
 
     users = requests.get('https://jsonplaceholder.typicode.com/users').json()
@@ -22,8 +19,7 @@ if __name__ == "__main__":
         user_id = user.get('id')
         username = user.get('username')
 
-        todos = requests.get('https://jsonplaceholder.typicode.com/\
-                             todos?userId={}'.format(user_id)).json()
+        todos = requests.get(url + "{}".format(user_id)).json()
 
         tasks = []
         for i in todos:
