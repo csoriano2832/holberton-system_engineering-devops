@@ -16,9 +16,12 @@ def top_ten(subreddit):
                AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61\
                Safari/537.36"}
 
-    response = requests.get(url, headers=headers).json()
-    response = response.get('data').get('children')
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
+        response = response.json().get('data').get('children')
 
-    for post in response:
-        title = post.get('data').get('title')
-        print(title)
+        for post in response:
+            title = post.get('data').get('title')
+            print(title)
+    else:
+        print("None")
