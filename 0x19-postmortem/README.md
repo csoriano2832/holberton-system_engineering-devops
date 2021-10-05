@@ -1,4 +1,5 @@
 # Postmortem (*Mock scenario*)
+![](https://www.wfla.com/wp-content/uploads/sites/71/2020/12/gettyimages-1006480588-1.jpg?w=760)
 ## Issue Summary:
 
 On Saturday, October 2 between the times of 3:04 PM and 4:01 PM (AST) we 
@@ -38,3 +39,7 @@ instead of computer time.
 latest work before updating the system to assure quality.
 * Database monitoring will be established to detect possible problems in the 
 systems sooner and save time on correcting it.
+* Allow access to DNS servers only to a select few individuals to prevent
+possibe future outages to our services
+
+![](https://media.nu.nl/m/ufzxuz2aoczt_sqr256.jpg/facebook-topman-zuckerberg-verliest-in-enkele-uren-miljarden-op-beurs.jpg)
